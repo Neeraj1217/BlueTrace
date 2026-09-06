@@ -1,25 +1,3 @@
-"""
-scoring.py
-Coder 1 owns this file.
-
-EvidenceScorer turns raw numbers (distance, time gap, ship's course)
-into one explainable association score per vessel. No ML here --
-just a transparent weighted formula, which is actually a STRENGTH for
-a prototype: every score can be explained to a judge in one sentence,
-unlike a black-box model.
-
-The five evidence components:
-- distance:      how close was the ship to the spill?
-- timing:        how close in time was the ship's last position?
-- direction:     was the ship heading TOWARD the spill location?
-- trajectory:    does the ship's course match the drift's overall
-                  direction (origin -> spill)?
-- data_quality:  how fresh/reliable is this AIS ping?
-
-Each component is scored 0-100, then combined with weights into one
-overall score.
-"""
-
 import math
 
 

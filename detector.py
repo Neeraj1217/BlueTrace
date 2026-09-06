@@ -1,15 +1,3 @@
-"""
-detector.py
-Coder 1 owns this file.
-
-SpillDetector uses classical image processing (OpenCV) to find candidate
-oil-spill regions in a SAR image. Oil spills dampen ocean waves, so they
-show up as darker patches against the lighter, noisier ocean background.
-
-This is "candidate detection", not proof of oil -- dark patches can also
-be look-alikes (calm water, algae, low wind areas). We label the output
-as a candidate accordingly.
-"""
 
 import cv2
 import numpy as np
@@ -18,12 +6,7 @@ from datetime import datetime, timezone
 
 class SpillDetector:
     def __init__(self, image_bounds: dict = None):
-        """
-        image_bounds: the real-world lat/lon box the image covers.
-        This lets us convert pixel coordinates into lat/lon.
-        Default here is a placeholder box off the Visakhapatnam coast --
-        replace with the real bounds of whatever image you use.
-        """
+
         self.image_bounds = image_bounds or {
             "lat_min": 17.50, "lat_max": 17.90,
             "lon_min": 83.10, "lon_max": 83.50,
@@ -38,15 +21,7 @@ class SpillDetector:
         return lat, lon
 
     def detect(self, image_path: str, detected_at: str = None) -> dict:
-        """
-        Input: path to a SAR image file, and optionally the real
-               capture timestamp of that image (ISO string, e.g.
-               "2026-09-04T03:42:00Z"). Real SAR products usually carry
-               this in their metadata/filename -- for the demo you can
-               pass it manually. If not given, we fall back to "now"
-               so the field is never left empty.
-        Output: dict describing the candidate spill (same shape as Day 1)
-        """
+
         img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
         if img is None:
             raise FileNotFoundError(f"Could not read image at {image_path}")

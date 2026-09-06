@@ -1,24 +1,3 @@
-"""
-weather.py
-Coder 1 owns this file.
-
-WeatherService fetches REAL wind and ocean current conditions for a
-given location, replacing the placeholder values previously hardcoded
-into drift.py's estimate() call.
-
-Uses Open-Meteo (https://open-meteo.com) -- free, no API key required,
-no signup needed. Two endpoints:
-  - Weather API   -> wind speed + direction
-  - Marine API    -> ocean current speed + direction
-
-IMPORTANT DESIGN CHOICE: this file does NOT change drift.py at all.
-drift.py's estimate() method still just takes plain numbers as
-arguments -- it doesn't know or care where they came from. This file's
-only job is to fetch real numbers and hand them to drift.py in the
-same shape it already expects. That keeps drift.py's tested logic
-completely untouched.
-"""
-
 import requests
 from datetime import datetime
 

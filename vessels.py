@@ -1,17 +1,3 @@
-"""
-vessels.py
-Coder 1 owns this file.
-
-VesselFinder loads AIS (ship tracking) data and returns vessels that
-were near the spill location around the relevant time. This is the
-"who was in the area" step, before scoring.py decides how suspicious
-each one looks.
-
-Expects a CSV with these columns (same as real AIS extracts, e.g. from
-Marine Cadastre): MMSI, VesselName, VesselType, BaseDateTime, LAT, LON,
-SOG, COG. Swap in a real downloaded AIS CSV any time -- as long as the
-column names match, nothing else here needs to change.
-"""
 
 import math
 from datetime import datetime, timedelta

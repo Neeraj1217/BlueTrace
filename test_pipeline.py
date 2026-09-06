@@ -1,13 +1,3 @@
-"""
-test_pipeline.py
-Run this with: python test_pipeline.py
-
-This calls all four of your modules in order, just like the real
-pipeline will, and prints the final combined result. Everything is
-fake data today -- the point is proving the WIRING works with zero
-errors before you add real logic tomorrow.
-"""
-
 from detector import SpillDetector
 from drift import DriftEstimator
 from vessels import VesselFinder

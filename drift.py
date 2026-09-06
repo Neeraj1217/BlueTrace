@@ -1,23 +1,3 @@
-"""
-drift.py
-Coder 1 owns this file.
-
-DriftEstimator takes a spill location and works out where it likely
-originated, by projecting BACKWARD against wind and ocean current over
-a chosen time window. This is simplified physics (no ML), which is
-appropriate and honest for a prototype -- real oil-spill trajectory
-models (e.g. GNOME, OpenDrift) use far more complex ocean/weather data.
-
-IMPORTANT convention note (this trips people up, so read it):
-- Wind direction is normally reported METEOROLOGICALLY: the direction
-  the wind is blowing FROM. A spill is pushed in the OPPOSITE direction
-  (where the wind is blowing TO).
-- Ocean current direction is normally reported OCEANOGRAPHICALLY: the
-  direction the water is flowing TOWARD. A spill moves directly in that
-  direction.
-This file handles that conversion so you don't have to think about it
-every time you call it.
-"""
 
 import math
 
@@ -51,19 +31,6 @@ class DriftEstimator:
         current_speed_mps: float = 0.3,
         current_direction_to_deg: float = 210.0,
     ) -> dict:
-        """
-        Input:
-          spill: dict from SpillDetector.detect() -- needs 'lat' and 'lon'
-          wind_speed_mps / wind_direction_from_deg: wind conditions at
-              spill time (defaults are placeholder typical coastal values
-              -- replace with a real weather API call when you have one)
-          current_speed_mps / current_direction_to_deg: ocean current
-              conditions (defaults are placeholder values)
-
-        Output: dict with estimated origin + a drift path from origin to
-        the spill location, plus the assumptions used (for transparency
-        in the demo -- judges will respect this being explicit).
-        """
         lat, lon = spill["lat"], spill["lon"]
         if lat is None or lon is None:
             return {
