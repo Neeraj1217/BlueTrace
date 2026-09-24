@@ -1,6 +1,36 @@
-venv/
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# Python environment/config
 .env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+dist/
+.vite/
+.npm/
+
+# IDE / editors
 .vscode/
 .idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build/cache
+coverage/
+.cache/

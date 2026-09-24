@@ -1,0 +1,114 @@
+{
+  "spill": {
+    "lat": 17.7216,
+    "lon": 83.3438,
+    "area_km2": 55.55,
+    "confidence": 0.65,
+    "detected_at": "2026-09-04T03:42:00Z",
+    "note": "Candidate dark region — not yet confirmed as oil"
+  },
+  "drift": {
+    "origin_lat": 17.7969,
+    "origin_lon": 83.4004,
+    "drift_path": [
+      [17.7969, 83.4004],
+      [17.7781, 83.3863],
+      [17.7593, 83.3721],
+      [17.7404, 83.358],
+      [17.7216, 83.3438]
+    ],
+    "drift_hours": 6.0,
+    "assumptions": {
+      "wind_speed_mps": 6.0,
+      "wind_direction_from_deg": 45.0,
+      "current_speed_mps": 0.3,
+      "current_direction_to_deg": 210.0
+    },
+    "note": "Simplified linear backtrack using wind leeway + current vectors"
+  },
+  "ranked_vessels": [
+    {
+      "mmsi": "419008821",
+      "name": "MV Konkan Pearl",
+      "vessel_type": "Bulk Carrier",
+      "lat": 17.7482,
+      "lon": 83.3615,
+      "distance_km": 6.2,
+      "last_seen_at": "2026-09-04T03:15:00Z",
+      "score": 88.4,
+      "evidence": {
+        "distance": 94.2,
+        "timing": 96.5,
+        "direction": 71.3,
+        "trajectory": 91.8,
+        "data_quality": 97.1
+      }
+    },
+    {
+      "mmsi": "419004512",
+      "name": "MV Eastern Voyager",
+      "vessel_type": "Container Ship",
+      "lat": 17.7356,
+      "lon": 83.3298,
+      "distance_km": 4.8,
+      "last_seen_at": "2026-09-04T02:58:00Z",
+      "score": 71.2,
+      "evidence": {
+        "distance": 82.0,
+        "timing": 78.4,
+        "direction": 55.6,
+        "trajectory": 74.9,
+        "data_quality": 88.3
+      }
+    },
+    {
+      "mmsi": "419001203",
+      "name": "Coastal Express",
+      "vessel_type": "General Cargo",
+      "lat": 17.7124,
+      "lon": 83.3782,
+      "distance_km": 9.1,
+      "last_seen_at": "2026-09-04T01:42:00Z",
+      "score": 54.7,
+      "evidence": {
+        "distance": 58.3,
+        "timing": 62.1,
+        "direction": 48.9,
+        "trajectory": 55.4,
+        "data_quality": 76.5
+      }
+    },
+    {
+      "mmsi": "419007334",
+      "name": "MV Bay Star",
+      "vessel_type": "Tanker",
+      "lat": 17.7691,
+      "lon": 83.4123,
+      "distance_km": 12.4,
+      "last_seen_at": "2026-09-04T00:30:00Z",
+      "score": 38.2,
+      "evidence": {
+        "distance": 42.1,
+        "timing": 35.8,
+        "direction": 31.2,
+        "trajectory": 40.6,
+        "data_quality": 68.9
+      }
+    },
+    {
+      "mmsi": "419009991",
+      "name": "MV Coastal Runner",
+      "vessel_type": "Bulk Carrier",
+      "distance_km": 18.7,
+      "last_seen_at": "2026-09-03T22:10:00Z",
+      "score": 22.5,
+      "evidence": {
+        "distance": 28.4,
+        "timing": 19.6,
+        "direction": 22.1,
+        "trajectory": 18.3,
+        "data_quality": 55.2
+      }
+    }
+  ]
+}

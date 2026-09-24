@@ -84,7 +84,11 @@ class EvidenceScorer:
 
         overall = sum(components[k] * self.weights[k] for k in self.weights)
 
+        # Keep the AIS record intact for downstream consumers.  In
+        # particular, the dashboard needs the real position associated with
+        # this scored observation; it must not fabricate map coordinates.
         return {
+            **vessel,
             "mmsi": vessel.get("mmsi", "unknown"),
             "name": vessel.get("name", "unknown"),
             "score": round(overall, 1),
